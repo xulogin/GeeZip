@@ -1,0 +1,32 @@
+{
+  "name": "geezip",
+  "version": "1.0.0",
+  "description": "让遥感数据「压缩了再下载」：在 GEE 上先把几十个波段逐像元编码成几个 uint8 波段，只下载这一份，回到本地再解码还原。编码器和解码器在本地一起训练（量化感知），编码器搬上 GEE 做前向传播，搬完自动核对两遍，确认云上算的和本地训的是同一套。实测 6 波段少下 4.2 倍、24 维时序少下 8.1 倍，还原误差小于 Landsat 自身的辐射定标精度。前置依赖 GeeLo（提供实跑测试台）。仅支持 Windows。",
+  "author": {
+    "name": "Haifeng Xu",
+    "email": "hifengxu@gmail.com",
+    "url": "https://github.com/xulogin"
+  },
+  "homepage": "https://github.com/xulogin/GeeZip",
+  "repository": "https://github.com/xulogin/GeeZip",
+  "license": "MIT",
+  "keywords": [
+    "gee",
+    "google-earth-engine",
+    "earth-engine",
+    "compression",
+    "autoencoder",
+    "dimensionality-reduction",
+    "download",
+    "remote-sensing",
+    "geospatial",
+    "landsat",
+    "time-series",
+    "遥感",
+    "压缩",
+    "降维",
+    "下载",
+    "自编码器",
+    "windows"
+  ]
+}

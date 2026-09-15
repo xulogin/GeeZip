@@ -1,0 +1,41 @@
+{
+  "name": "geezip",
+  "version": "1.0.0",
+  "description": "让遥感数据「压缩了再下载」：在 GEE 上把几十个波段逐像元编码成几个 uint8 波段，只下载这一份，回本地解码还原。搬完自动核对两遍，对不上就不让下载。前置依赖 GeeLo。仅支持 Windows。",
+  "author": {
+    "name": "Haifeng Xu",
+    "email": "hifengxu@gmail.com",
+    "url": "https://github.com/xulogin"
+  },
+  "homepage": "https://github.com/xulogin/GeeZip",
+  "repository": "https://github.com/xulogin/GeeZip",
+  "license": "MIT",
+  "keywords": [
+    "gee",
+    "google-earth-engine",
+    "compression",
+    "autoencoder",
+    "remote-sensing",
+    "遥感",
+    "压缩",
+    "下载"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GeeZip",
+    "shortDescription": "在 GEE 上先把数据压好再下载，回本地还原",
+    "longDescription": "下遥感数据最花时间的一步是把几十个波段原样搬回本地，而很多人下回来第一件事就是降维——真正占带宽的那一步白走了。GeeZip 把顺序反过来：编码器放在 GEE 上，逐像元把几十个波段压成几个 uint8 波段，你只下载这一份，回到本地再用解码器还原。编码器和解码器在本地一起训练，训练时就按下载用的精度取整，所以部署和训练是同一个模型。搬上云之后自动核对两遍：一遍看模型输出两边一样不一样，一遍看输入特征两边一样不一样。都对得上才让你下载。实测 6 波段少下 4.2 倍、24 维时序少下 8.1 倍，还原误差小于 Landsat 自身的辐射定标精度。仅支持 Windows。",
+    "developerName": "Haifeng Xu",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "帮我把云南这块地的 Landsat 数据压缩了再下载",
+      "时序数据太大下不动，用 GeeZip 压一下"
+    ],
+    "websiteURL": "https://github.com/xulogin/GeeZip"
+  }
+}

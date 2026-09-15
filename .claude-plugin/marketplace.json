@@ -1,0 +1,37 @@
+{
+  "name": "geezip",
+  "owner": {
+    "name": "Haifeng Xu",
+    "url": "https://github.com/xulogin"
+  },
+  "metadata": {
+    "description": "在 GEE 上先把数据压好再下载：几十个波段编码成几个 uint8 波段，只下这一份，回本地解码还原。",
+    "homepage": "https://github.com/xulogin/GeeZip"
+  },
+  "plugins": [
+    {
+      "name": "geezip",
+      "source": "./",
+      "description": "让遥感数据「压缩了再下载」。编码器在 GEE 上逐像元把几十个波段压成几个，只下载这一份，回本地解码还原。搬完自动核对两遍，对不上就不让下载。实测 6 波段少下 4.2 倍、24 维时序少下 8.1 倍，误差小于传感器自身的定标精度。前置依赖 GeeLo，自检时会自动装。仅支持 Windows。",
+      "version": "1.0.0"
+    },
+    {
+      "name": "geelo",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/xulogin/GeeLo.git"
+      },
+      "description": "GeeZip 的前置依赖（不装也行，GeeZip 自检时会用 装GeeLo.js 自动拉一份）。装上就多一个 /geelo：让 AI 把普通 GEE 脚本在本机连真服务器跑通再交付。仅支持 Windows。",
+      "version": "1.0.0"
+    },
+    {
+      "name": "geedl",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/xulogin/GeeDL.git"
+      },
+      "description": "姊妹项目：在 GEE 上跑神经网络，输出预测值和逐像元不确定性 σ。GeeZip 的「搬模型 + 两道门禁」方法就来自它。仅支持 Windows。",
+      "version": "1.0.0"
+    }
+  ]
+}

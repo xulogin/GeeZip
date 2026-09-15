@@ -1,0 +1,29 @@
+# 产物：全是跑出来的，不进版本库
+产物/
+*.tif
+*.tiff
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Node（GeeLo 的依赖不在本仓库，但以防万一）
+node_modules/
+
+# 本地配置：可能含项目 ID 等个人信息
+配置.local.txt
+
+# 凭据绝对不能进库（它本来就在 ~/.config/earthengine/，这里再兜一道）
+credentials
+*.pem
+*.key
+.env
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
